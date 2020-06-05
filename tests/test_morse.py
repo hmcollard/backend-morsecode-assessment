@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+# Devs: change to 'solutions.morse' to test the solution.
 from morse import decodeMorse, decodeBits
 
 
@@ -34,7 +35,7 @@ class TestMorseA(unittest.TestCase):
         """Complex tests"""
         self.assertEqual(decodeMorse(
             '      ...---... -.-.--   - .... .   --.- ..- .. -.-. -.- '
-            '  -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .  '
+            '  -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .  '  # noqa
             ' .-.. .- --.. -.--   -.. --- --. .-.-.-  '),
             'SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'
         )
