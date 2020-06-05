@@ -2,14 +2,18 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+# Devs: change to 'solutions.morse' to test the solution.
 from morse import decodeMorse, decodeBits
 
 
 class TestMorseA(unittest.TestCase):
     """This class only tests the decodeMorse function"""
+
     def test_hey_jude(self):
         """Basic HEY JUDE"""
-        self.assertEqual(decodeMorse('.... . -.--   .--- ..- -.. .'), 'HEY JUDE')
+        self.assertEqual(
+            decodeMorse('.... . -.--   .--- ..- -.. .'),
+            'HEY JUDE')
 
     def test_basic_decoding(self):
         """Basic Morse decoding"""
@@ -31,8 +35,9 @@ class TestMorseA(unittest.TestCase):
         """Complex tests"""
         self.assertEqual(decodeMorse(
             '      ...---... -.-.--   - .... .   --.- ..- .. -.-. -.- '
-            '  -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .  '
-            ' .-.. .- --.. -.--   -.. --- --. .-.-.-  '), 'SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'
+            '  -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .  '  # noqa
+            ' .-.. .- --.. -.--   -.. --- --. .-.-.-  '),
+            'SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'
         )
 
 
