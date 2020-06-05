@@ -57,25 +57,38 @@ MORSE_CODE = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
               '.-.-.': '+', '-....-': '-', '..--.-': '_', '.-..-.': '"',
               '...-..-': '$', '.--.-.': '@', '...---...': 'SOS'}
 
-
-# def decodeMorse(morse_code):
-#     alfa_sentence = []
-#     morse_words = morse_code.split('   ')
-#     for word in morse_words:
-#         for letter in word.split():
-#             alfa_sentence.append(MORSE_CODE.get(letter))
-#         alfa_sentence.append(' ')
-#     print(''.join(alfa_sentence).strip())
+#  my own work with help on line 63 from Daniel:
 
 
 def decodeMorse(morse_code):
     alfa_sentence = []
-    morse_words = morse_code.split('  ')
+    morse_words = morse_code.split('   ')
     for word in morse_words:
-        letters = word.split()
-        alfa_sentence.append(
-            ''.join([MORSE_CODE.get(letter) for letter in letters]))
-    print(' '.join(alfa_sentence).strip())
+        for letter in word.split():
+            alfa_sentence.append(MORSE_CODE.get(letter))
+        alfa_sentence.append(' ')
+    print(''.join(alfa_sentence).strip())
+#
+# class group colaberation: but creating new string objects is not good
+
+# def decodeMorse(morse_code):
+#     morse_words = morse_code.split('   ')
+#     decoded_words = ''
+#     for morse_word in morse_words:
+#         for morse_char in morse_word.split():
+#             decoded_words += MORSE_CODE[morse_char]
+#         decoded_words += ' '
+#     return decoded_words.strip()
+
+#  Daniel help refactor my code with list comprehentions:
+# def decodeMorse(morse_code):
+#     alfa_sentence = []
+#     morse_words = morse_code.split('  ')
+#     for word in morse_words:
+#         letters = word.split()
+#         alfa_sentence.append(
+#             ''.join([MORSE_CODE.get(letter) for letter in letters]))
+#     print(' '.join(alfa_sentence).strip())
 
 
 # decodeMorse('.... . -.--   .--- ..- -.. .')
